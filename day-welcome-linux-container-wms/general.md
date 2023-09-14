@@ -26,4 +26,4 @@ Go to [pollev.com/martinholzer210](https://pollev.com/martinholzer210) on your b
 
 So, let's get started!
 
-Next: [Linux for Bioinformatics re-cap](linux.md)
+Next: [Course overview](day-sc2-intro/README.md)

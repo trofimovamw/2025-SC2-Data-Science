@@ -21,8 +21,7 @@ A practical introduction to genomic surveillance using SARS-CoV-2 as an example 
 ### <a name="0"></a> Monday, 2023-09-18
 | Time        | Welcome, Linux re-cap, container & WMS |
 | --          | --               |
-| 10:00-10:30 | Welcome & [introduction](day-welcome-linux-container-wms/general.md) |
-| 10:00-10:30 | [FU course intro](day-sc2-intro/README.md) |
+| 10:00-10:30 | [Welcome & course intro](day-sc2-intro/README.md) |
 | 10:30-11:00 | [RKI Genomic Surveillance and SARS-CoV-2](day-sc2-intro/README.md) |
 | 10:30-12:00 | [Linux re-cap](day-welcome-linux-container-wms/linux.md) |
 | 12:00-13:00 | Lunch break |
