@@ -53,7 +53,7 @@ conda config --add channels bioconda
 conda config --add channels conda-forge
 
 # now we create a new environment and install all tools
-mamba create -y -p envs/workshop fastqc fastp nanoplot pycoqc filtlong minimap2 samtools bcftools igv pangolin president snpeff bamclipper freebayes
+mamba create -y -p envs/workshop fastqc fastp nanoplot filtlong minimap2 samtools bcftools igv pangolin president snpeff bamclipper freebayes
 conda activate envs/workshop
 ```
 _Note_: We skip `medaka` here because the tools has some conflicting dependencies with other tools. Thus, we will use `medaka` later in a separate `mamba` environment. 
@@ -101,8 +101,8 @@ NANOPORE_SAMPLE='SARSCoV2-nanopore.fastq.gz'
 
 __Quality assessment__
 ```bash
-# activate the conda environment
-conda activate envs/workshop
+# activate the conda environment, assuming that your envs folder is one folder up
+conda activate ../envs/workshop
 
 # always remember that almost all tools have a help page
 fastqc --help
@@ -136,9 +136,6 @@ How did the quality change?
 
 __Quality assessment__
 ```bash
-# activate the conda environment
-conda activate workshop
-
 # always remember that almost all tools have a help page
 NanoPlot --help
 
@@ -347,7 +344,8 @@ We want to use `Medaka` for variant calling. `Medaka` is not in your current `wo
     * thus, let us install `mamba` via `conda` and then install `medaka`
 
 ```bash
-mamba create -y -p envs/medaka "medaka>=1.8.0"
+# check where you are currently located and then create the medaka env in the correct path! E.g. next to the `envs/workshop` env 
+mamba create -y -p ../envs/medaka "medaka>=1.8.0"
 conda activate envs/medaka
 ```
 [Code](https://github.com/nanoporetech/medaka) 
