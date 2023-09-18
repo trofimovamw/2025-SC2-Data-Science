@@ -214,6 +214,11 @@ __Reminder: You can also install specific versions of a tool!__
 
 ### Container and WMS (brief intro)
 
+You will also need `docker` now. You can find good installation manuals via google. Or e.g. follow 
+
+* [https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/), installation on Linux via command line and `sudo` permissions
+* [https://docs.docker.com/desktop/install/mac-install/](https://docs.docker.com/desktop/install/mac-install/), install on Mac via GUI
+
 Check the small example at [https://github.com/hoelzer/nf_example](https://github.com/hoelzer/nf_example). Clone the repository using `git`. 
 
 Then investigate the `Dockerfile` and try to build the container image locally using `docker build .`. Remember that you can also give your container image a specific name using the `-t` parameter. 
