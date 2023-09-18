@@ -383,7 +383,7 @@ __Check and filter the VCF file__
 
 ```bash
 # switch to the workshop env if you are not already on it
-conda activate workshop
+conda activate ../envs/workshop
 
 # compress the annotated VCF file (needed for the next steps)
 bgzip -f medaka-nanopore.annotate.vcf
@@ -417,7 +417,7 @@ __Attention:__ The above commands yield a simple consensus sequence without all 
 * `pangolin`
 
 ```bash
-pangolin -t 4 consensus.fasta
+pangolin -t 4 consensus-nanopore.fasta
 ```
 [Publication](https://academic.oup.com/ve/article/7/2/veab064/6315289) | [Code](https://github.com/cov-lineages/pangolin) 
 
