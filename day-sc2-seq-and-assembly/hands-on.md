@@ -53,12 +53,25 @@ conda config --add channels bioconda
 conda config --add channels conda-forge
 
 # now we create a new environment and install all tools
-mamba create -n workshop fastqc fastp nanoplot pycoqc filtlong minimap2 samtools bcftools igv pangolin president snpeff bamclipper freebayes
-conda activate workshop
+mamba create -y -p envs/workshop fastqc fastp nanoplot pycoqc filtlong minimap2 samtools bcftools igv pangolin president snpeff bamclipper freebayes
+conda activate envs/workshop
 ```
 _Note_: We skip `medaka` here because the tools has some conflicting dependencies with other tools. Thus, we will use `medaka` later in a separate `mamba` environment. 
 
 _Note2_: It might be also more convenient to have separate environments for each tool or to summarize tools per task (e.g. mapping) in one environment. Like it would be also best practice using a Workflow Management System. You can also do that if you want and then switch between environments. 
+
+## Create a folder for the hands-on work
+
+Below are just example paths, you can also adjust them and use other folder names! Assuming you are on a Linux system on a local machine (laptop, workstation):
+
+```sh
+# Switch to a path on your system where you want to store your data and results
+# Check that you have enough space!
+cd /scratch/$USER
+# Create new folder
+mkdir fu-workshop
+cd fu-workshop
+```
 
 ## Example input data
 
@@ -89,7 +102,7 @@ NANOPORE_SAMPLE='SARSCoV2-nanopore.fastq.gz'
 __Quality assessment__
 ```bash
 # activate the conda environment
-conda activate workshop
+conda activate envs/workshop
 
 # always remember that almost all tools have a help page
 fastqc --help

@@ -85,6 +85,8 @@ ls -lah testdir/
 
 ### HPC setup 
 
+**Attention: this might not be relevant for you. However, when you are working on the FU cluster some of the below commands form SLURM might be good to know!**
+
 If you are using your own (Linux) laptop or one provided for the workshops you are good to go. If you are using **an RKI Windows laptop**, you have to connect to the Linux High-Performance Cluster (HPC). You also need an account that you can request via an IT ticket. If you are working on another HPC that runs the SLURM job scheduler, such as the FU cluster, the following commands might be also interesting for you (see `srun` examples below).
 
 #### HPC access
@@ -192,20 +194,21 @@ conda activate envs/workshop
 
 * **Note**: Bioinformatics tools are regulary updated and input parameters might change (use `--help` or `-h` to see the manual for a tool!)
 * Install most of them into our environment
-    * we will already install many tools that we will use over the next days!
+    * as an example we will install some tools that we will use over the next days!
+    * we will install the tools in a specific folder `envs/workshop` to keep your system clean, otherwise they would be installed in your default path (probably your home dir)
 
 ```bash
 mkdir envs
-mamba create -y -p envs/workshop fastqc nanoplot filtlong flye bandage minimap2 tablet racon samtools igv
+mamba create -y -p envs/workshop fastqc fastp nanoplot pycoqc filtlong minimap2 samtools bcftools igv pangolin president snpeff bamclipper freebayes
 conda activate envs/workshop
 # test
 NanoPlot --help
-flye --version
+minimap2 --version
 ```
 
 __Reminder: You can also install specific versions of a tool!__
 * important for full reproducibility
-* e.g. `mamba install flye==2.9.0`
+* e.g. `mamba install minimap2==2.22`
 * per default, `mamba` will try to install the newest tool version based on your configured channels and system architecture and dependencies to other tools
 
 ### Create a folder for the hands-on work
