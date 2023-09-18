@@ -211,17 +211,6 @@ __Reminder: You can also install specific versions of a tool!__
 * e.g. `mamba install minimap2==2.22`
 * per default, `mamba` will try to install the newest tool version based on your configured channels and system architecture and dependencies to other tools
 
-### Create a folder for the hands-on work
-
-Below are just example paths, you can also adjust them and use other folder names! Assuming you are on a Linux system on a local machine (laptop, workstation):
-
-```sh
-# Switch to a path on your system where you want to store your data and results
-cd /scratch/$USER
-# Create new folder
-mkdir nanopore-workshop
-cd nanopore-workshop
-```
 
 ### Container and WMS (brief intro)
 
@@ -232,3 +221,5 @@ Then investigate the `Dockerfile` and try to build the container image locally u
 Install `nextflow`, for example directly from [https://nextflow.io/](https://nextflow.io/) or using `conda` or `mamba`. 
 
 Try to get the little `nextflow` example workflow running. The workflow is using `sourmash` so you either need to install the dependency or provide an available container image, see these [code lines](https://github.com/hoelzer/nf_example/blob/master/main.nf#L14-L18). 
+
+If interested, check out the Sourmash [publication](https://f1000research.com/articles/8-1006) and [code](https://github.com/sourmash-bio/sourmash)
