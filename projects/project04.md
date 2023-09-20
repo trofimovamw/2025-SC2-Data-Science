@@ -26,14 +26,16 @@ An exemplary structure of the talk:
 
 **Detailed Tasks:**
 
-1) Install `GInPipe` [https://github.com/KleistLab/GInPipe](https://github.com/KleistLab/GInPipe)
-2) Download data:
-  * SARS-CoV-2 sequences, reported case numbers, and testing statistics for Berlin: [TODO]()
-  * SARS-CoV-2 sequences, reported case numbers, and testing statistics for North Rhine-Westphalia (NRW): [TODO]()
-  * Index reference sequence from Wuhan outbreak, NCBI: [NC_045512.2](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512.2)
-3) Explore data:
-  * Create a plot showing the number of sequences per day for both federal states. The sampling dates are given in the headers within the fasta file.
-  * Plot a histogram of the amount of "N"s in the sequences for both federal states.
-4) Configure & run `GInPipe` with the data sets. _(Note: The run may take a while, 20-30 minutes, for the larger data sets)_
-  * Visualize output (reported incidences vs. `GInPipe` incidence correlate ϕ)
-5) Based on ϕ, test numbers and test positivity, compute case ascertainment rates.
+1) Install `GInPipe` [https://github.com/KleistLab/GInPipe](https://github.com/KleistLab/GInPipe) and `covsonar` [https://github.com/rki-mf1/covsonar]
+2) If not done already in the hands-on session, analyse the dataset for Germany from 2022 with GInPipe. The dataset can be found here: [https://osf.io/hxk5m](https://osf.io/hxk5m)
+3) Download data:
+  * covsonar databse: [TODO]()
+  * reported cases table for France: [TODO]()
+4) Export and explore data:
+  * Extract entries that fall into the time period between 2022-01-01 and 2022-07-01 and originate in France from the covsonar database. Note: the location is stored in field ***collection***
+  * Plot a histogram of the amount of entries per day for the extracted data set
+  * Note that the reported cases for France were recorded once a week. Pick a method and obtain the (average) daily number of reported cases before running the pipeline.
+5) Analyse the extracted France dataset using GInPipe:
+  * Configure (see course notes or README in the GInPIpe repository) and run the pipeline
+6) Discuss the France results and compare with results for Germany.
+
