@@ -30,11 +30,11 @@ An exemplary structure of the talk:
 2)	For each data set reconstruct a genome sequence (for example: as taught on day 2).
   * perform quality-control of the raw reads and mapping against a reference genome (NCBI: NC_045512.2)
 3)	Document statistics 
-    * How many reads where aligned? What’s the read quality?
-    * Read length distribution
-    * Genome coverage plots
+  * How many reads where aligned? What’s the read quality?
+  * Read length distribution
+  * Genome coverage plots
 4)	Generate consensus sequences
 5)	Analyze consensus sequences
-    * How many ambiguous calls?
-    * Which data set achieved the best consensus sequence in your eyes? Why? 
+  * How many ambiguous calls?
+  * Which data set achieved the best consensus sequence in your eyes? Why? 
 6)	Prepare a talk to present the results & analysis
