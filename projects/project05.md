@@ -26,14 +26,15 @@ An exemplary structure of the talk:
 
 **Detailed Tasks:**
 
-1) Install `GInPipe` [https://github.com/KleistLab/GInPipe](https://github.com/KleistLab/GInPipe)
-2) Download data:
-  * SARS-CoV-2 sequences, reported case numbers, and testing statistics for Berlin: [TODO]()
-  * SARS-CoV-2 sequences, reported case numbers, and testing statistics for North Rhine-Westphalia (NRW): [TODO]()
-  * Index reference sequence from Wuhan outbreak, NCBI: [NC_045512.2](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512.2)
-3) Explore data:
-  * Create a plot showing the number of sequences per day for both federal states. The sampling dates are given in the headers within the fasta file.
-  * Plot a histogram of the amount of "N"s in the sequences for both federal states.
-4) Configure & run `GInPipe` with the data sets. _(Note: The run may take a while, 20-30 minutes, for the larger data sets)_
-  * Visualize output (reported incidences vs. `GInPipe` incidence correlate ϕ)
-5) Based on ϕ, test numbers and test positivity, compute case ascertainment rates.
+1) Install `Breakfast` [https://github.com/rki-mf1/breakfast](https://github.com/rki-mf1/breakfast)
+2) Download [SARS-CoV-2 sequences](https://osf.io/de3v7) and corresponding [meta data](https://osf.io/rsv39)
+3) Perform basic statistics:
+  * Number of ambiguous nucleotides per sequence
+  * Number of mutations
+  * Project and cluster sequences (for example PCA, kmeans)
+4) Configure & run `Breakfast`
+  * Visualize cluster sizes and number distributions
+  * Compute within cluster _average_ mutation edit distance
+5) Based on the meta data: compute, visualize, and analyze:
+  * sampling date distribution within clusters vs. in the entire dataset
+  * Within-cluster compositions based on zip-code (Federal state proximity, e.g. use the SEQUENCING_LAB_PC as a proxy for the zip-code)
