@@ -26,16 +26,16 @@ An exemplary structure of the talk:
 
 **Detailed Tasks:**
 
-1) Install `GInPipe` [https://github.com/KleistLab/GInPipe](https://github.com/KleistLab/GInPipe) and `covsonar` [https://github.com/rki-mf1/covsonar]
+1) Install `GInPipe` [https://github.com/KleistLab/GInPipe](https://github.com/KleistLab/GInPipe) and `covsonar` [https://github.com/rki-mf1/covsonar](https://github.com/rki-mf1/covsonar)
 2) If not done already in the hands-on session, analyse the dataset for Germany from 2022 with GInPipe. The dataset can be found here: [https://osf.io/hxk5m](https://osf.io/hxk5m)
-3) Download data:
-  * covsonar databse: [TODO]()
-  * reported cases table for France: [TODO]()
+3) Download the following data as well:
+  * [A CoVsonar databse](https://osf.io/uchtg)
+  * [reported cases table for France](https://osf.io/jptkw)
 4) Export and explore data:
   * Extract entries that fall into the time period between 2022-01-01 and 2022-07-01 and originate in France from the covsonar database. Note: the location is stored in field ***collection***
   * Plot a histogram of the amount of entries per day for the extracted data set
   * Note that the reported cases for France were recorded once a week. Pick a method and obtain the (average) daily number of reported cases before running the pipeline.
-5) Analyse the extracted France dataset using GInPipe:
+5) Analyse the extracted France dataset using `GInPipe``:
   * Configure (see course notes or README in the GInPIpe repository) and run the pipeline
 6) Discuss the France results and compare with results for Germany.
 

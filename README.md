@@ -94,3 +94,4 @@ This course material is partly based on the following resources and on contribut
 * Maureen Smith, Maria Trofimova, RKI P5 and FU Berlin, content on Incidence estimation
 * Hugues Richard, RKI MF1, content about SC2 risk assessment
 * Matt Huska & Denis Beslic, RKI MF1, content about SC2 outbreak detection & clustering
+* We thank the [GISAID](https://gisaid.org) initiative for providing a framework for sharing SARS-CoV-2 sequence data internationally and all the submitting labs
