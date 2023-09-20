@@ -28,7 +28,7 @@ An exemplary structure of the talk:
 
 1)	Download SARS-CoV-2 date sets from https://fs.bmi.app.bmi.dphoenixsuite.de/s/RnJMyC2xSj36nj3 
 2)	For each data set reconstruct a genome sequence (for example: as taught on day 2).
-   * perform quality-control of the raw reads and mapping against a reference genome (NCBI: NC_045512.2)
+  * perform quality-control of the raw reads and mapping against a reference genome (NCBI: NC_045512.2)
 3)	Document statistics 
     * How many reads where aligned? What’s the read quality?
     * Read length distribution
