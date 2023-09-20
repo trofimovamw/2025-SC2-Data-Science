@@ -10,9 +10,10 @@ Check the covsonar GitHub README and install the tool in a conda/mamba environme
 # download the repository to the current working directory using git 
 git clone https://github.com/rki-mf1/covsonar.git
 # build the custom software environment using conda or mamba [recommended]
-conda env create -n sonar -f covsonar/sonar.env.yml
+# ATTENTION: check where you are located and where you install the environment
+conda env create -p ../envs/sonar -f covsonar/sonar.env.yml
 # activate the conda evironment if built 
-conda activate sonar
+conda activate ../envs/sonar
 ```
 
 Let's get some example SARS-CoV-2 genomes:
