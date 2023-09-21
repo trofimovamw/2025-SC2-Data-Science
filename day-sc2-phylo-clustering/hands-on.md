@@ -97,7 +97,7 @@ wget --no-check-certificate https://osf.io/kxasc/download -O breakfast-clusterin
 tar zxvf breakfast-clustering-data.tar.gz
 # For now we only want the sequences that were in the archive, so we symlink them into our current directory
 ln -s breakfast-clustering-data/input-sim-5000.fasta.xz sequences.fasta.xz
-# We also need the reference genome that you downloaded in ["Genome reconstruction"](../day-sc2-seq-and-assembly/hands-on.md#mapping--visualization) hands-on
+# We also need the reference genome that you downloaded in the "Genome reconstruction" hands-on
 ln -s nCoV-2019.reference.fasta reference.fasta
 # Lastly we need some fake metadata that we will assign to the simulated sequences we downloaded above, just for the sake of this lesson
 wget https://zenodo.org/record/8355599/files/SARS-CoV-2-Sequenzdaten_Deutschland.tsv.xz?download=1 -O metadata-germany.tsv.xz
