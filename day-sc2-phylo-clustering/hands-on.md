@@ -179,7 +179,7 @@ The next step could be to look in more detail into a single cluster. For this, w
 > biggest_plz_summary
 ```
 
-Most of the sequences come from a diagnostic lab with a PLZ that is in Koeln. But is that noteworty or do they just submit a lot of sequences in general? If this was a real outbreak we would expect some association between the cluster membership and geographic location (we use DL PLZ as a proxy for this). To help answer this question we can use Fisher's Exact Test, to test whether the proportion of sequences belonging to the PLZ is different in our cluster than it is in the full dataset:
+Most of the sequences come from a diagnostic lab with a PLZ that is in Koeln. But is that noteworty or do they just submit a lot of sequences in general? If this was a real outbreak we would expect some association between the cluster membership and geographic location (we use DL PLZ as a proxy for this). To help answer this question we can use [Fisher's Exact Test](https://en.wikipedia.org/wiki/Fisher%27s_exact_test), to test whether the proportion of sequences belonging to the PLZ is different in our cluster than it is in the full dataset:
 
 ```R
 > chain_meta <- chains %>% left_join(metadata, by=join_by(id == SEQUENCE.ID))
@@ -200,3 +200,4 @@ odds ratio
 
 We see from the results of our statistical test that the association between a sequence belonging to cluster 2 and coming from a diagnostic lab in the PLZ 50858 is not statistically significant (p-value = 0.9284), so we don't expect that this is a real outbreak. It is not surprising because we are using dummy metadata which as been arbitrarily assigned to our sequences.
 
+You could do the same statistical test for all of the different metadata fields to see if there is any association, as well as for all of the clusters, but you will start to run into problems with multiple testing and need to consider [multiple testing correction](https://en.wikipedia.org/wiki/Multiple_comparisons_problem). That is outside of thescope of this course.
