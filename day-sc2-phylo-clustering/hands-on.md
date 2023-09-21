@@ -75,13 +75,14 @@ Now we want to try identify putative infection chains using SARS-CoV-2 sequences
 
 * `minimap2`
 * `gofasta`
+* `seqkit`
 * `breakfast`
 * `R with the dplyr library`
 
 __Install all tools__
 ```bash
 # now we create a new environment and install all tools
-mamba create -n chaining minimap2 gofasta breakfast r-dplyr
+mamba create -n chaining minimap2 gofasta seqkit breakfast r-dplyr
 
 # activate the env
 conda activate chaining
@@ -95,9 +96,13 @@ wget --no-check-certificate https://osf.io/kxasc/download -O breakfast-clusterin
 # extract the archive
 tar zxvf breakfast-clustering-data.tar.gz
 # For now we only want the sequences that were in the archive, so we symlink them into our current directory
-ln -s breakfast-clustering-data/input-sim-5000.fasta.xz .
+ln -s breakfast-clustering-data/input-sim-5000.fasta.xz sequences.fasta.xz
 # We also need the reference genome that you downloaded in "Mapping and Visualization" hands-on
 ln -s nCoV-2019.reference.fasta reference.fasta
+# Lastly we need some fake metadata that we will assign to the simulated sequences we downloaded above, just for the sake of this lesson
+wget https://zenodo.org/record/8355599/files/SARS-CoV-2-Sequenzdaten_Deutschland.tsv.xz?download=1 -O metadata-germany.tsv.xz
+NUM_SEQS=$(xzcat sequences.fasta.xz | grep -c "^>")
+xzcat metadata-germany.tsv.xz | head -n $((NUM_SEQS + 1)) > metadata.tsv
 ```
 
 ### Identifying mutations
@@ -107,7 +112,7 @@ Breakfast uses the set of mutations of each sequences to compute a distance meas
 For the sake of this course we will use a very fast method to identify mutations, which ignores insertions in the query (non-reference) sequence. You could also use MAFFT (see above).
 
 ```bash
-minimap2 -a -x asm20 --sam-hit-only --secondary=no --score-N=0 -t 4 reference.fasta sequences.fasta | gzip > mapped-sequences.sam.gz
+xzcat sequences.fasta.xz | minimap2 -a -x asm20 --sam-hit-only --secondary=no --score-N=0 -t 4 reference.fasta - | gzip > mapped-sequences.sam.gz
 zcat mapped-sequences.sam.gz | gofasta sam toMultiAlign -t 4 --reference reference.fasta --trimstart 265 --trimend 29674 --trim --pad | seqkit seq --upper-case -o msa.fasta.gz 
 ```
 
@@ -130,38 +135,68 @@ breakfast --input-file snps.csv.gz --max-dist 1 --sep ',' --sep2 '|' --id-col qu
 
 ### Summarize the results
 
+The output of the breakfast is a table of input sequences IDs, and either a cluster membership or "NA" if the sequence does not cluster with any other sequence. In order to make use of this data, we need to do some downstream analysis. For this I'll use R, and the nice "dplyr" package which makes it easy to join different data sets and manipulate tabular data.
+
+First we start R:
+
 ```bash
 $ R
 
 R version 4.1.3 (2022-03-10) -- "One Push-Up"
-Copyright (C) 2022 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
-
-R is free software and comes with ABSOLUTELY NO WARRANTY.
-You are welcome to redistribute it under certain conditions.
-Type 'license()' or 'licence()' for distribution details.
-
-  Natural language support but running in an English locale
-
-R is a collaborative project with many contributors.
-Type 'contributors()' for more information and
-'citation()' on how to cite R or R packages in publications.
-
-Type 'demo()' for some demos, 'help()' for on-line help, or
-'help.start()' for an HTML browser interface to help.
-Type 'q()' to quit R.
-
-> library(dplyr)
-
-Attaching package: ‘dplyr’
-
-The following objects are masked from ‘package:stats’:
-
-    filter, lag
-
-The following objects are masked from ‘package:base’:
-
-    intersect, setdiff, setequal, union
-
->
+[...]
 ```
+
+Now we can load dplyr, and our data sets, reassing the sequence IDs in our dummy metadata set, and calculate the largest chains that we found in our data set:
+
+```R
+> library(dplyr)
+> chains <- read.delim("breakfast-results/clusters.tsv")
+> metadata <- read.delim("metadata.tsv")
+> # We don't have real metadata for these simulated sequences, so we just use
+> # some existing Germany SC2 metadata and arbitrary assign it to our simulated
+> # sequences.
+> metadata$SEQUENCE.ID <- chains$id
+> top10 <- chains %>%
+    filter(!is.na(cluster_id)) %>%
+    group_by(cluster_id) %>%
+    summarize(chain_size=n(), ids=paste(id, collapse=",")) %>%
+    arrange(desc(chain_size)) %>%
+    head(n=10)
+> top10
+> write.table(top10, file="top10.tsv", sep="\t")
+```
+
+The next step could be to look in more detail into a single cluster. For this, we almost always need to merge in some sequence metadata. Here we will take the largest chain, and summarize the PLZ of the diagnostic labs where the samples were taken. This is the highest level of geographic detail we have for our data due to data protection restrictions:
+
+```R
+> biggest_id <- as.numeric(top10[1, "cluster_id"])
+> biggest_plz_summary <- chains %>%
+    filter(cluster_id == biggest_id) %>%
+    left_join(metadata, by=join_by(id == SEQUENCE.ID)) %>%
+    group_by(DL.POSTAL_CODE) %>%
+    summarize(n=n()) %>%
+    arrange(desc(n))
+> biggest_plz_summary
+```
+
+Most of the sequences come from a diagnostic lab with a PLZ that is in Koeln. But is that noteworty or do they just submit a lot of sequences in general? If this was a real outbreak we would expect some association between the cluster membership and geographic location (we use DL PLZ as a proxy for this). To help answer this question we can use Fisher's Exact Test, to test whether the proportion of sequences belonging to the PLZ is different in our cluster than it is in the full dataset:
+
+```R
+> chain_meta <- chains %>% left_join(metadata, by=join_by(id == SEQUENCE.ID))
+> fisher.test(chain_meta$cluster_id == 2, chain_meta$DL.POSTAL_CODE == 50858)
+
+        Fisher's Exact Test for Count Data
+
+data:  chain_meta$cluster_id == 2 and chain_meta$DL.POSTAL_CODE == 50858
+p-value = 0.9284
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.892013 1.132012
+sample estimates:
+odds ratio
+  1.005186
+
+```
+
+We see from the results of our statistical test that the association between a sequence belonging to cluster 2 and coming from a diagnostic lab in the PLZ 50858 is not statistically significant (p-value = 0.9284), so we don't expect that this is a real outbreak. It is not surprising because we are using dummy metadata which as been arbitrarily assigned to our sequences.
+
