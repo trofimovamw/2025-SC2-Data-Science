@@ -19,10 +19,10 @@ conda config --add channels bioconda
 conda config --add channels conda-forge
 
 # now we create a new environment and install all tools
-mamba create -n tree president mafft iqtree jalview
+mamba create -p envs/tree president mafft iqtree jalview
 
 # activate the env
-conda activate tree
+conda activate envs/tree
 ```
 
 ### Example data
@@ -82,10 +82,10 @@ Now we want to try identify putative infection chains using SARS-CoV-2 sequences
 __Install all tools__
 ```bash
 # now we create a new environment and install all tools
-mamba create -n chaining minimap2 gofasta seqkit breakfast r-dplyr
+mamba create -p envs/chaining minimap2 gofasta seqkit breakfast r-dplyr
 
 # activate the env
-conda activate chaining
+conda activate envs/chaining
 ```
 
 ### Example data
@@ -97,7 +97,7 @@ wget --no-check-certificate https://osf.io/kxasc/download -O breakfast-clusterin
 tar zxvf breakfast-clustering-data.tar.gz
 # For now we only want the sequences that were in the archive, so we symlink them into our current directory
 ln -s breakfast-clustering-data/input-sim-5000.fasta.xz sequences.fasta.xz
-# We also need the reference genome that you downloaded in "Mapping and Visualization" hands-on
+# We also need the reference genome that you downloaded in ["Genome reconstruction"](../day-sc2-seq-and-assembly/hands-on.md#mapping--visualization) hands-on
 ln -s nCoV-2019.reference.fasta reference.fasta
 # Lastly we need some fake metadata that we will assign to the simulated sequences we downloaded above, just for the sake of this lesson
 wget https://zenodo.org/record/8355599/files/SARS-CoV-2-Sequenzdaten_Deutschland.tsv.xz?download=1 -O metadata-germany.tsv.xz
