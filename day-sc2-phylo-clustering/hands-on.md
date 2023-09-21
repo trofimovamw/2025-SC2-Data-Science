@@ -109,7 +109,7 @@ xzcat metadata-germany.tsv.xz | head -n $((NUM_SEQS + 1)) > metadata.tsv
 
 Breakfast uses the set of mutations of each sequences to compute a distance measure between sequences. These need to be precomputed, and this is commonly already done because we are interested in mutations for many reasons other than outbreak detection.
 
-For the sake of this course we will use a very fast method to identify mutations, which ignores insertions in the query (non-reference) sequence. You could also use MAFFT (see above).
+For the sake of this course we will use a very fast method to identify mutations, which ignores insertions in the query (non-reference) sequence. If you have a small set of sequences or you don't mind the calculation taking longer, you could also use MAFFT (see above) to build an MSA, or even use covsonar to directly calculate the mutations given a set of seqeunces.
 
 ```bash
 xzcat sequences.fasta.xz | minimap2 -a -x asm20 --sam-hit-only --secondary=no --score-N=0 -t 4 reference.fasta - | gzip > mapped-sequences.sam.gz
@@ -200,4 +200,4 @@ odds ratio
 
 We see from the results of our statistical test that the association between a sequence belonging to cluster 2 and coming from a diagnostic lab in the PLZ 50858 is not statistically significant (p-value = 0.9284), so we don't expect that this is a real outbreak. It is not surprising because we are using dummy metadata which as been arbitrarily assigned to our sequences.
 
-You could do the same statistical test for all of the different metadata fields to see if there is any association, as well as for all of the clusters, but you will start to run into problems with multiple testing and need to consider [multiple testing correction](https://en.wikipedia.org/wiki/Multiple_comparisons_problem). That is outside of thescope of this course.
+You could do the same statistical test for all of the different metadata fields to see if there is any association, as well as for all of the clusters, but you will start to run into problems with multiple testing and need to consider [multiple testing correction](https://en.wikipedia.org/wiki/Multiple_comparisons_problem). That is outside of the scope of this course.
