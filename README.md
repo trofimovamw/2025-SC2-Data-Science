@@ -61,7 +61,7 @@ A practical introduction to genomic surveillance using SARS-CoV-2 as an example 
 | 10:00-10:15 | Debriefing previous day |
 | 10:15-10:45 | [SARS-CoV-2 Variant prioritization via VOCAL](day-sc2-incidence/README.md) |
 | 10:45-11:15 | [SARS-CoV-2 Evolution on a Dynamic Immune Landscape](day-sc2-incidence/README.md) |
-| 11:15-11:45 | [Hands-on (SARS-CoV-2 Evolution on a Dynamic Immune Landscape)](day-sc2-incidence/hands-on-vasil.md) |
+| 11:15-11:45 | [Hands-on (SARS-CoV-2 Evolution on a Dynamic Immune Landscape)](day-sc2-incidence/hands-on_vasil.md) |
 | 12:00-13:00 | Lunch break |
 | 13:00-14:00 | [SARS-CoV-2 pathogen evolution and genome-based incidence estimation](day-sc2-incidence/README.md) |
 | 14:00-14:30 | Coffee break |
