@@ -10,7 +10,7 @@ In this hands-on, however, we are using the web-app of VASIL that you can found 
 
 ### 1. Mutation profiles
 Mutation profiles can be found and extracted from [outbreak.info](https://outbreak.info/)
-Please visit [here](https://outbreak.info/compare-lineages?pango=JN.1&pango=KP.3&gene=S&threshold=75&nthresh=1&dark=false) to check the differences in the S protein between the two variants JN.1 and EG.5.
+Please visit [here](https://outbreak.info/compare-lineages?pango=JN.1&pango=EG.5&gene=S&threshold=75&nthresh=1&dark=false) to check the differences in the S protein between the two variants JN.1 and EG.5.
 
 You can download these mutation profiles here: [JN.1](JN.1_mutationsprofile.txt)  [EG.5](EG.5_mutationsprofile.txt)
 
