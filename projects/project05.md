@@ -5,7 +5,7 @@ Practical course: SARS-2 Bioinformatics & Data Science
 Max von Kleist, Daniela Börnigen
 
 
-# Project X
+# Project 5
 
 ## Cross-Immunization
 
@@ -15,7 +15,7 @@ Max von Kleist, Daniela Börnigen
 *The project should be worked out in groups of two or three students. Students should document their progress and present their work on Friday; XXX; XXX to the lecturers and students. The talk should be about 30-40 min, and allowing for 10-15min of questions.*
 
 
-**a) The presentation should be uploaded via whiteboard as `ProjectX.pdf`, no later than the above stated deadline.**
+**a) The presentation should be uploaded via whiteboard as `Project5.pdf`, no later than the above stated deadline.**
 
 An exemplary structure of the talk: 
 *	Title including group composition (possibly a link to the code repository)
@@ -25,7 +25,7 @@ An exemplary structure of the talk:
 *	Discussion of results; aspects that were unclear; how the workflow could be improved 
 *	Outlook
 
-**b) Codes for conducting the project tasks should be zipped into `ProjectX.zip` and uploaded either via whiteboard or made accessible via GitHub or GitLab.** In the latter case, a link to the repo should be provided on the slides and the repo must be accessible to the lecturers.
+**b) Codes for conducting the project tasks should be zipped into `Project5.zip` and uploaded either via whiteboard or made accessible via GitHub or GitLab.** In the latter case, a link to the repo should be provided on the slides and the repo must be accessible to the lecturers.
 
 **Detailed Tasks:**
 
