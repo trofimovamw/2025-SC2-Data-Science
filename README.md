@@ -79,7 +79,7 @@ A practical introduction to genomic surveillance using SARS-CoV-2 as an example 
 | 14:30-15:45 | [Hands-on & demo](day-sc2-phylo-clustering/hands-on.md) |
 | 15:45-16:00 | Wrap-up & questions |
 
-### <a name="9"></a>, 2024-09-28 to 2024-10-03
+### <a name="9"></a> Project work 2024-09-28 to 2024-10-03
 | Time        | Project work |
 
 ### <a name="9"></a> Friday, 2024-10-04
