@@ -9,7 +9,7 @@ Max von Kleist, Daniela Börnigen
 
 ## Cross-Immunization
 
-**Deadline**: 04.10.2024
+**Deadline**: 04.10.2024, 15:00
 
 
 *The project should be worked out in groups of two or three students. Students should document their progress and present their work on Friday; 04.10.2024; 15:00 to the lecturers and students. The talk should be about 30-40 min, and allowing for 10-15min of questions.*
