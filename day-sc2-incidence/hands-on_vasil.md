@@ -18,5 +18,6 @@ You can download these mutation profiles here: [JN.1](JN.1_mutationsprofile.txt)
 ## Run VASIL web-app
 Go to the [VASIL web-app](https://projects-raharinirina.pythonanywhere.com/vasil/FoldR_PNeut/). Upload the two mutation profiles for lineage1 and lineage2 and run the app. 
 The computation will take a while. 
+Note: Please use either Chrome or Safari (Firefox is not supported).
 
 
