@@ -6,6 +6,19 @@ Here we describe basic tools and commands to process either Illumina or Nanopore
 
 **Example data can be found here: [https://osf.io/9qkz5/](https://osf.io/9qkz5/)** and is also referenced in the used commands again. 
 
+## Create a folder for the hands-on work (maybe you already have one from yesterday)
+
+Below are just example paths, you can also adjust them and use other folder names! Assuming you are on a Linux system on a local machine (laptop, workstation):
+
+```sh
+# Switch to a path on your system where you want to store your data and results
+# Check that you have enough space!
+cd ~
+# Create new folder
+mkdir workshop
+cd workshop
+```
+
 ## Basic setup
 
 In this part, we will go through the different steps to generate from a FASTQ raw sequencing data file a SARS-CoV-2 consensus genome and lineage annotation. We will do this using the Linux system and command line interfance. 
@@ -42,7 +55,7 @@ These tools are handy if you want to perform quality-control directly on the raw
 
 In general, you can Google all of these tools and find further information in publications, GitHub code repositories and on (Bio)conda. 
 
-__Install all tools__
+__Install all tools **IF NOT ALREADY DONE**__
 Because this is a quite heavy environment we will use `mamba` as an updated version of `conda` to faster resolve the environment and install all tools.
 
 ```bash
@@ -60,18 +73,6 @@ _Note_: We skip `medaka` here because the tools has some conflicting dependencie
 
 _Note2_: It might be also more convenient to have separate environments for each tool or to summarize tools per task (e.g. mapping) in one environment. Like it would be also best practice using a Workflow Management System. You can also do that if you want and then switch between environments. 
 
-## Create a folder for the hands-on work
-
-Below are just example paths, you can also adjust them and use other folder names! Assuming you are on a Linux system on a local machine (laptop, workstation):
-
-```sh
-# Switch to a path on your system where you want to store your data and results
-# Check that you have enough space!
-cd /scratch/$USER
-# Create new folder
-mkdir fu-workshop
-cd fu-workshop
-```
 
 ## Example input data
 
@@ -101,8 +102,8 @@ NANOPORE_SAMPLE='SARSCoV2-nanopore.fastq.gz'
 
 __Quality assessment__
 ```bash
-# activate the conda environment, assuming that your envs folder is one folder up
-conda activate ../envs/workshop
+# activate the conda environment, assuming that your envs folder is located here (relative path)
+conda activate envs/workshop
 
 # always remember that almost all tools have a help page
 fastqc --help
@@ -143,8 +144,7 @@ NanoPlot --help
 NanoPlot -t 4 --fastq $NANOPORE_SAMPLE -o nanoplot/raw 
     
 # run NanoPlot on your FASTQ file with some more parameters
-NanoPlot -t 4 --fastq $NANOPORE_SAMPLE --title "Raw reads" \
-    --color darkslategrey --N50 --loglength -o nanoplot/raw 
+NanoPlot -t 4 --fastq $NANOPORE_SAMPLE --title "Raw reads" --color darkslategrey --N50 --loglength -o nanoplot/raw 
 ```
 [Publication](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/bty149/4934939) | [Code](https://github.com/wdecoster/NanoPlot)
 
@@ -158,8 +158,7 @@ __Length filtering__
 # yield ~1.2kbp reads
 filtlong --min_length 800 --max_length 1400 $NANOPORE_SAMPLE | gzip - > clean_reads_nanopore.fastq.gz
 
-NanoPlot -t 4 --fastq clean_reads_nanopore.fastq.gz --title "Filtered reads" \
-    --color darkslategrey --N50 --loglength -o nanoplot/clean 
+NanoPlot -t 4 --fastq clean_reads_nanopore.fastq.gz --title "Filtered reads" --color darkslategrey --N50 --loglength -o nanoplot/clean 
 ```
 [Code](https://github.com/rrwick/Filtlong)
 
@@ -227,6 +226,7 @@ done
 ```
 [Publication](https://academic.oup.com/bioinformatics/article/25/16/2078/204688) | [Code](https://github.com/samtools/samtools) 
 
+**Hint:** You can also delete the `*.sam` files which can be huge. The `*.bam` files can be also always converted again into SAM. 
 
 __Look at the mapped reads__
 ```bash
@@ -345,8 +345,8 @@ We want to use `Medaka` for variant calling. `Medaka` is not in your current `wo
 
 ```bash
 # check where you are currently located and then create the medaka env in the correct path! E.g. next to the `envs/workshop` env 
-mamba create -y -p ../envs/medaka "medaka>=1.8.0"
-conda activate ../envs/medaka
+mamba create -y -p envs/medaka "medaka>=1.8.0"
+conda activate envs/medaka
 ```
 [Code](https://github.com/nanoporetech/medaka) 
 
@@ -382,8 +382,8 @@ __Check and filter the VCF file__
 **ATTENTION**: We just do this here as an example using the Nanopore VCF. Just exchange the Nanopore annotated VCF input file with the Freebayes VCF file.
 
 ```bash
-# switch to the workshop env if you are not already on it
-conda activate ../envs/workshop
+# switch to the workshop env if you are not already on it (assuimg a relative path to the envs/workshop folder)
+conda activate envs/workshop
 
 # compress the annotated VCF file (needed for the next steps)
 bgzip -f medaka-nanopore.annotate.vcf
