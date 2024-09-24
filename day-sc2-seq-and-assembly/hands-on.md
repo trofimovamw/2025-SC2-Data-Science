@@ -2,7 +2,7 @@
 
 ## In general
 
-Here we describe basic tools and commands to process either Illumina or Nanopore sequencing data using SARS-CoV-2 amplification data as an example. The goal is to construct a genome sequence using a reference-based approach. **Althought the methodological steps are quite similar, both Illumina and Nanopore need different tools and parameters.**
+Here we describe basic tools and commands to process either Illumina or Nanopore sequencing data using SARS-CoV-2 amplification data as an example. The goal is to construct a genome sequence using a reference-based approach. **Although the methodological steps are quite similar, both Illumina and Nanopore need different tools and parameters.**
 
 **Example data can be found here: [https://osf.io/9qkz5/](https://osf.io/9qkz5/)** and is also referenced in the used commands again. 
 
@@ -21,7 +21,7 @@ cd workshop
 
 ## Basic setup
 
-In this part, we will go through the different steps to generate from a FASTQ raw sequencing data file a SARS-CoV-2 consensus genome and lineage annotation. We will do this using the Linux system and command line interfance. 
+In this part, we will go through the different steps to generate from a FASTQ raw sequencing data file a SARS-CoV-2 consensus genome and lineage annotation. We will do this using the Linux system and command line interface. 
 
 The tools we will use are listed here and will be discussed in detail below:
 
@@ -153,7 +153,7 @@ __Length filtering__
 * `filtlong`
 
 ```bash
-# Attention! min and max length of course depent on your sequencing protocol! 
+# Attention! min and max length of course depend on your sequencing protocol! 
 # the example nanopore reads were sequenced with the ARTIC V1200 kit and thus
 # yield ~1.2kbp reads
 filtlong --min_length 800 --max_length 1400 $NANOPORE_SAMPLE | gzip - > clean_reads_nanopore.fastq.gz
