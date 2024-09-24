@@ -153,7 +153,7 @@ __Length filtering__
 * `filtlong`
 
 ```bash
-# Attention! min and max length of course depent on your sequencing protocol! 
+# Attention! min and max length of course depend on your sequencing protocol! 
 # the example nanopore reads were sequenced with the ARTIC V1200 kit and thus
 # yield ~1.2kbp reads
 filtlong --min_length 800 --max_length 1400 $NANOPORE_SAMPLE | gzip - > clean_reads_nanopore.fastq.gz
