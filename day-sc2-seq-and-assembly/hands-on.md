@@ -423,6 +423,26 @@ pangolin -t 4 consensus-nanopore.fasta
 
 __Task:__ Check the output. Which lineage was annotated? Which version of `pangolin` did you run? You can check this via `pangolin -v`. It is important to use the newest version of `pangolin` to also get results for newly defined lineages. You can update `pangolin` via `pangolin --update`. If you used an older version that was installed into the 'workshop' environment, try to create a new separate conda environment for `pangolin` and install the [newest version](https://anaconda.org/bioconda/pangolin). Rerun the lineage annotation. Are there differences? 
 
+**Attention** If the conda/mamba installation of `pangolin` does not work, you can try using a conatiner:
+
+```bash
+# this will download the container if not already available
+# start one interactive instance from it
+# and mount the current directory into the container (using the same path)
+docker run --rm -it -v $PWD:$PWD -w $PWD nanozoo/pangolin-v4:4.3--1.30 /bin/bash
+# inside the container you can then run:
+pangolin -t 4 consensus-nanopore.fasta
+```
+
+If you can not use `docker` (for example, bc you are on a HPC), then try `singularity`:
+
+```bash
+# this will convert the docker image to singularity and store it as a local file
+singularity pull --name nanozoo-pangolin-v4-4.3--1.30.img docker://nanozoo/pangolin-v4:4.3--1.30
+singularity run nanozoo-pangolin-v4-4.3--1.30.img
+pangolin -t 4 consensus-nanopore.fasta
+```
+
 ### Consensus QC
 
 #### Illumina & Nanopore
