@@ -2,7 +2,7 @@
 
 ## Lectures
 
-* [SARS-CoV-2 nomenclature & mutation profiling](https://docs.google.com/presentation/d/113ogLT2B2DUNz_6j8QKxC6Tlfy-sB1THFW_OD_ZI8Cc/edit?usp=sharing)
+* [SARS-CoV-2 nomenclature & mutation profiling](https://docs.google.com/presentation/d/1LzXViUj0JaM7DfOx6CwKnl72NR8s79V4D_SNKjB-Yng/edit?usp=sharing)
 
 ## Practical part
 
