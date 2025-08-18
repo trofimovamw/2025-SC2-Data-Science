@@ -4,10 +4,10 @@ A practical introduction to genomic surveillance using SARS-CoV-2 as an example 
 
 ## Schedule links for the workshop
 
-* [2024-09-29 - Monday: Welcome, Linux re-cap, SARS-CoV-2 sequencing](#0)  
-* [2024-09-30 - Tuesday: SARS-CoV-2 genome reconstruction](#6)  
-* [2024-10-01 - Wednesday: SARS-CoV-2 nomenclature, mutation profiling & evolution](#7)  
-* [2024-10-02 - Thursday: SARS-CoV-2 genome-based incidence estimation, phylogeny & outbreak investigation](#8)  
+* [2025-09-29 - Monday: Welcome, Linux re-cap, SARS-CoV-2 sequencing](#0)  
+* [2025-09-30 - Tuesday: SARS-CoV-2 genome reconstruction](#6)  
+* [2025-10-01 - Wednesday: SARS-CoV-2 nomenclature, mutation profiling & evolution](#7)  
+* [2025-10-02 - Thursday: SARS-CoV-2 genome-based incidence estimation, phylogeny & outbreak investigation](#8)  
 
 ## Instructors
 
@@ -17,7 +17,7 @@ A practical introduction to genomic surveillance using SARS-CoV-2 as an example 
 
 > All events are held at FU Arnimallee 6, Room 017
 
-### <a name="0"></a> Monday, 2024-09-29
+### <a name="0"></a> Monday, 2025-09-29
 | Time        | Welcome, Linux re-cap, SARS-CoV-2 sequencing |
 | --          | --               |
 | 10:00-10:30 | [Welcome & course intro](day-sc2-intro/README.md) |
@@ -29,7 +29,7 @@ A practical introduction to genomic surveillance using SARS-CoV-2 as an example 
 | 14:30-16:00 | [Setup & Hands-on](day-welcome-linux-container-wms/hands-on.md) |
 | 16:00-16:15 | Wrap-up & questions |
 
-### <a name="6"></a> Tuesday, 2024-09-30
+### <a name="6"></a> Tuesday, 2025-09-30
 | Time        | SARS-CoV-2 genome reconstruction |
 | --          | --               |
 | 10:00-10:15 | Debriefing previous day |
@@ -40,7 +40,7 @@ A practical introduction to genomic surveillance using SARS-CoV-2 as an example 
 | 15:00-15:45 | Continue practical session |
 | 15:45-16:00 | Wrap-up & questions |
 
-### <a name="7"></a> Wednesday, 2024-10-01
+### <a name="7"></a> Wednesday, 2025-10-01
 | Time        | SARS-CoV-2 nomenclature, mutation profiling & evolution |
 | --          | --               |
 | 10:00-10:15 | Debriefing previous day |
@@ -52,7 +52,7 @@ A practical introduction to genomic surveillance using SARS-CoV-2 as an example 
 | 15:00-15:45 | [Hands-on (SARS-CoV-2 Evolution on a Dynamic Immune Landscape)](day-sc2-incidence/hands-on_vasil.md) |
 | 15:45-16:00 | Wrap-up & questions |
 
-### <a name="8"></a> Thursday, 2024-10-02
+### <a name="8"></a> Thursday, 2025-10-02
 | Time        | SARS-CoV-2 genome-based incidence estimation, phylogeny & outbreak investigation |
 | --          | --               |
 | 10:00-10:15 | Debriefing previous day |
@@ -66,9 +66,9 @@ A practical introduction to genomic surveillance using SARS-CoV-2 as an example 
 | 15:45-16:00 | Wrap-up & questions |
 
 
-### <a name="9"></a> Project work 2024-10-06 to 2024-10-09
+### <a name="9"></a> Project work 2025-10-06 to 2025-10-09
 
-### <a name="9"></a> Friday, 2024-10-10
+### <a name="9"></a> Friday, 2025-10-10
 | Time        | Project presentations |
 | --          | --               |
 | 10:00-11:00 | Project I |
