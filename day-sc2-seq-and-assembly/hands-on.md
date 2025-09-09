@@ -4,7 +4,7 @@
 
 Here we describe basic tools and commands to process either Illumina or Nanopore sequencing data using SARS-CoV-2 amplification data as an example. The goal is to construct a genome sequence using a reference-based approach. **Although the methodological steps are quite similar, both Illumina and Nanopore need different tools and parameters.**
 
-**Example data can be found here: [https://osf.io/9qkz5/](https://osf.io/9qkz5/)** and is also referenced in the used commands again. 
+**Example data can be found here (click on "Files"): [https://osf.io/9qkz5/](https://osf.io/9qkz5/)** and is also referenced in the used commands again. 
 
 ## Create a folder for the hands-on work (maybe you already have one from yesterday)
 

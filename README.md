@@ -2,6 +2,8 @@
 
 A practical introduction to genomic surveillance using SARS-CoV-2 as an example and in the context of the FU course "SARS-CoV-2 Bioinformatics & Data Science" 2025.
 
+[Information on module at FU](https://www.fu-berlin.de/vv/en/lv/935210?m=428981&pc=575084&sm=870180).
+
 ## Schedule links for the workshop
 
 * [2025-09-29 - Monday: Welcome, Linux re-cap, SARS-CoV-2 sequencing](#0)  
