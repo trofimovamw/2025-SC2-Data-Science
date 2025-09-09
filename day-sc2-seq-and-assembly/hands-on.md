@@ -83,8 +83,11 @@ You can obtain example read files for Illumina and Nanopore [here](https://osf.i
 wget --no-check-certificate https://osf.io/yxep6/download -O SARSCoV2-illumina.R1.fastq.gz
 wget --no-check-certificate https://osf.io/qvzsh/download -O SARSCoV2-illumina.R2.fastq.gz
 
-# Nanopore
+# Nanopore (R9 data) - we will use this as example below
 wget --no-check-certificate https://osf.io/k9px6/download -O SARSCoV2-nanopore.fastq.gz
+
+# Nanopore (R10 data) - newer data, less errors? You could adjust the commands below and also analyze this sample! 
+wget --no-check-certificate https://osf.io/ge38p/download -O SARSCoV2-nanopore-R10.fastq.gz
 ```
 
 **ATTENTION**: here we set now variables to point to the example data sets so we can just use that in the following commands. Adjust accordingly for your system and folder structure. 
@@ -285,6 +288,8 @@ bamclipper.sh -b minimap2-illumina.sorted.bam -p cleanplex-corrected.amplicons.b
 
 ### Nanopore
 
+Keep in mind to chose the correct primer file for your sample! 
+
 ```bash
 # First, we download the primer BED scheme for the ARTIC V1200 scheme
 # Change to another BED file if needed!
@@ -355,7 +360,8 @@ __Call variants with Medaka__
 ```bash
 # first generate a file with information about potential variants
 # considering the used basecalling model. You should use the matching
-# model from your Guppy basecalling settings!
+# model from your Dorado basecalling settings! Here we exemplarily use 
+# older R9 data. For R10 data and different accuracies, you should change the model! 
 medaka consensus --model r941_min_hac_g507 --threads 4 --chunk_len 800 --chunk_ovlp 400 minimap2-nanopore.sorted.primerclipped.bam medaka-nanopore.consensus.hdf
 
 # actually call the variants
@@ -365,7 +371,7 @@ medaka variant nCoV-2019.reference.fasta medaka-nanopore.consensus.hdf medaka-na
 medaka tools annotate medaka-nanopore.vcf nCoV-2019.reference.fasta minimap2-nanopore.sorted.primerclipped.bam medaka-nanopore.annotate.vcf
 ```
 
-__Important__: Always use the matching `medaka` model based on how you or others did the `guppy` basecalling! You can check which `medaka` models are available via:
+__Important__: Always use the matching `medaka` model based on how you or others did the `Dorado` basecalling! You can check which `medaka` models are available via:
 ```bash
 medaka tools list_models | grep -v Default
 ```
