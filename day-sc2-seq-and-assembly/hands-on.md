@@ -86,7 +86,7 @@ wget --no-check-certificate https://osf.io/qvzsh/download -O SARSCoV2-illumina.R
 # Nanopore (R9 data) - we will use this as example below
 wget --no-check-certificate https://osf.io/k9px6/download -O SARSCoV2-nanopore.fastq.gz
 
-# Nanopore (R10 data) - newer data, less errors
+# Nanopore (R10 data) - newer data, less errors? You could adjust the commands below and also analyze this sample! 
 wget --no-check-certificate https://osf.io/ge38p/download -O SARSCoV2-nanopore-R10.fastq.gz
 ```
 
@@ -288,6 +288,8 @@ bamclipper.sh -b minimap2-illumina.sorted.bam -p cleanplex-corrected.amplicons.b
 
 ### Nanopore
 
+Keep in mind to chose the correct primer file for your sample! 
+
 ```bash
 # First, we download the primer BED scheme for the ARTIC V1200 scheme
 # Change to another BED file if needed!
@@ -359,7 +361,7 @@ __Call variants with Medaka__
 # first generate a file with information about potential variants
 # considering the used basecalling model. You should use the matching
 # model from your Dorado basecalling settings! Here we exemplarily use 
-# older R9 data. For R10 data, you should change the model! 
+# older R9 data. For R10 data and different accuracies, you should change the model! 
 medaka consensus --model r941_min_hac_g507 --threads 4 --chunk_len 800 --chunk_ovlp 400 minimap2-nanopore.sorted.primerclipped.bam medaka-nanopore.consensus.hdf
 
 # actually call the variants
