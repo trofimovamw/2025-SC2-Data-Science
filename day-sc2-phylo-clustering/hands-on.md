@@ -14,7 +14,6 @@ __Install all tools__
 ```bash
 # config some channels, this might be already done.
 # basically helps to not explicitly type the channels
-conda config --add channels defaults
 conda config --add channels bioconda
 conda config --add channels conda-forge
 
