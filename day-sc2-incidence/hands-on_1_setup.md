@@ -48,6 +48,7 @@ conda env create -p envs/GInPipe3 -f env/env.yml
 
 conda activate GInPipe3
 ```
+Note: remove package versions from the environment file if conda/mamba is notsolving the environment.
 
 #### 3.2. If an error occurs, try to install packages via mamba
 Follow the instructions to install Mamba: https://mamba.readthedocs.io/en/latest/mamba-installation.html
