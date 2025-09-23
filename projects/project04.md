@@ -39,5 +39,5 @@ An exemplary structure of the talk:
 6) Discuss the results and compare with UK Coronavirus Infection Survey:
   * Note that the UK Coronavirus Infection Survey provides an estimate for SC2-positive fraction of population for a time window (midpoint of each window is provided in the file in column **date**). Pick a method and obtain the (average) daily number of SC2-positives before plotting
   * Column **estimated_average_pop** is an estimate of how many people were SC2-positive in the given time window, while column **estimated_average** gives average percentage of SC2-positive population. Rescale the lower (**lower_bound_95CI**) and upper (**upper_bound_95CI**) percentage bounds of the estimate in the same way; use population size of 56.3 million
-  * Make a plot with a double y-axis, with UK Coronavirus Infection Survey data (column name: **estimated_average_pop**) on one side and `GInPipe` estimates on the other
+  * Make a plot with a double y-axis, with UK Coronavirus Infection Survey data on one side and `GInPipe` estimates on the other
   * Compare and discuss your results
