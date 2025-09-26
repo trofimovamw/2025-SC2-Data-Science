@@ -8,7 +8,7 @@ Max von Kleist, Martin Hölzer
 
 ## Outbreak detection for SARS-CoV-2
 
-**Deadline**: 10.10.2023, 15:00
+**Deadline**: 10.10.2025, 15:00
 
 *The project should be worked out in groups of two or three students. Students should document their progress and present their work on Friday; 10.10.2025; 15:00am to the lecturers and students. The talk should be about 30-40 min, and allowing for 10-15min of questions.*
 
