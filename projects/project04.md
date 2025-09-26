@@ -2,15 +2,15 @@ Freie Universität Berlin, Robert-Koch Institute
 
 Practical course: SARS-2 Bioinformatics & Data Science
 
-Max von Kleist, Martin Hölzer
+Max von Kleist, Martin Hölzer, Maria Trofimova
 
 # Project 4
 
 ## Genome-based SARS-CoV-2 incidence estimation and case ascertainment
 
-**Deadline**: 04.10.2024, 14:00
+**Deadline**: 10.10.2025
 
-*The project should be worked out in groups of two or three students. Students should document their progress and present their work on Friday; 04.10.2024; 14:30am to the lecturers and students. The talk should be about 30-40 min, and allowing for 10-15min of questions.*
+*The project should be worked out in groups of two or three students. Students should document their progress and present their work on Friday; 10.10.2025 to the lecturers and students. The talk should be about 30-40 min, and allowing for 10-15min of questions.*
 
 **a) The presentation should be uploaded via whiteboard as `Project4.pdf`, no later than the above stated deadline.**
 
@@ -38,4 +38,3 @@ An exemplary structure of the talk:
 5) Analyse the extracted France dataset using `GInPipe``:
   * Configure (see course notes or README in the GInPIpe repository) and run the pipeline
 6) Discuss the France results and compare with results for Germany.
-
