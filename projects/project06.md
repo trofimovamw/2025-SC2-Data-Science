@@ -1,6 +1,6 @@
 Freie Universität Berlin, Robert-Koch Institute
 
-Practical course: SARS-2 Bioinformatics & Data Science
+Practical course: SARS-CoV-2 Bioinformatics & Data Science
 
 Max von Kleist, Martin Hölzer
 
@@ -8,9 +8,9 @@ Max von Kleist, Martin Hölzer
 
 ## Outbreak detection for SARS-CoV-2
 
-**Deadline**: 29.09.2023, 15:00
+**Deadline**: 10.10.2023, 15:00
 
-*The project should be worked out in groups of two or three students. Students should document their progress and present their work on Friday; 29.09.2023; 15:30am to the lecturers and students. The talk should be about 30-40 min, and allowing for 10-15min of questions.*
+*The project should be worked out in groups of two or three students. Students should document their progress and present their work on Friday; 10.10.2025; 15:00am to the lecturers and students. The talk should be about 30-40 min, and allowing for 10-15min of questions.*
 
 **a) The presentation should be uploaded via whiteboard as `Project5.pdf`, no later than the above stated deadline.**
 
