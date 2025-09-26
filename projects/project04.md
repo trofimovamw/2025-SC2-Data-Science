@@ -26,15 +26,18 @@ An exemplary structure of the talk:
 
 **Detailed Tasks:**
 
-1) Install `GInPipe` [https://github.com/KleistLab/GInPipe](https://github.com/KleistLab/GInPipe) and `covsonar` [https://github.com/rki-mf1/covsonar](https://github.com/rki-mf1/covsonar)
-2) If not done already in the hands-on session, analyse the dataset for Germany from 2022 with GInPipe. The dataset can be found here: [https://osf.io/hxk5m](https://osf.io/hxk5m)
-3) Download the following data as well:
-  * [A CoVsonar databse](https://osf.io/uchtg)
-  * [reported cases table for France](https://osf.io/jptkw)
-4) Export and explore data:
-  * Extract entries that fall into the time period between 2022-01-01 and 2022-07-01 and originate in France from the covsonar database. Note: the location is stored in field ***collection***
-  * Plot a histogram of the amount of entries per day for the extracted data set
-  * Note that the reported cases for France were recorded once a week. Pick a method and obtain the (average) daily number of reported cases before running the pipeline.
-5) Analyse the extracted France dataset using `GInPipe``:
-  * Configure (see course notes or README in the GInPIpe repository) and run the pipeline
-6) Discuss the France results and compare with results for Germany.
+1) Install `GInPipe` [https://github.com/KleistLab/GInPipe](https://github.com/KleistLab/GInPipe)
+2) Download the following data:
+  * [England data in CSV format](https://box.fu-berlin.de/s/aroKcNJdfKFNbb3)
+  * [Reformatted data from UK Coronavirus Infection Survey study](https://box.fu-berlin.de/s/qC8dXWQ54GPJLnD): you can find the Infection Survey methodology [here](https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/methodologies/covid19infectionsurveypilotmethodsandfurtherinformation) 
+3) Explore and subsample data:
+  * Extract entries that fall into the time period between 2020-07-01 and 2021-06-01
+  * Plot a histogram of the amount of entries per day for the truncated data set
+  * Subsample data to obtain uniform data distribution along the time axis (e.g. split data into bins of a some length and subsample to match the size of each bin to the smallest one)
+5) Analyse both full and subsampled datasets using `GInPipe`:
+  * Configure (see course notes or README in the `GInPipe` repository) and run the pipeline
+6) Discuss the results and compare with UK Coronavirus Infection Survey:
+  * Note that the UK Coronavirus Infection Survey provides an estimate for SC2-positive fraction of population for a time window (midpoint of each window is provided in the file in column **date**). Pick a method and obtain the (average) daily number of SC2-positives before plotting
+  * Column **estimated_average_pop** is an estimate of how many people were SC2-positive in the given time window, while column **estimated_average** gives average percentage of SC2-positive population. Rescale the lower (**lower_bound_95CI**) and upper (**upper_bound_95CI**) percentage bounds of the estimate in the same way; use population size of 56.3 million
+  * Make a plot with a double y-axis, with UK Coronavirus Infection Survey data on one side and `GInPipe` estimates on the other
+  * Compare and discuss your results
