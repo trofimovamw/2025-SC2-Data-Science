@@ -8,7 +8,7 @@ Max von Kleist, Martin Hölzer
 
 ## Genome-based SARS-CoV-2 incidence estimation and case ascertainment
 
-**Deadline**: 04.10.2024, 14:00
+**Deadline**: 10.10.2025, 13:30
 
 *The project should be worked out in groups of two or three students. Students should document their progress and present their work on Friday; 04.10.2024; 14:30am to the lecturers and students. The talk should be about 30-40 min, and allowing for 10-15min of questions.*
 
