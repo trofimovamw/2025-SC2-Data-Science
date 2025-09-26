@@ -141,7 +141,7 @@ First we start R:
 ```bash
 $ R
 
-R version 4.1.3 (2022-03-10) -- "One Push-Up"
+R version 4.5.1 (2025-06-13) -- "Great Square Root"
 [...]
 ```
 
