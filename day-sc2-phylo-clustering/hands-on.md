@@ -14,7 +14,6 @@ __Install all tools__
 ```bash
 # config some channels, this might be already done.
 # basically helps to not explicitly type the channels
-conda config --add channels defaults
 conda config --add channels bioconda
 conda config --add channels conda-forge
 
@@ -142,7 +141,7 @@ First we start R:
 ```bash
 $ R
 
-R version 4.1.3 (2022-03-10) -- "One Push-Up"
+R version 4.5.1 (2025-06-13) -- "Great Square Root"
 [...]
 ```
 
@@ -198,6 +197,6 @@ odds ratio
 
 ```
 
-We see from the results of our statistical test that the association between a sequence belonging to cluster 2 and coming from a diagnostic lab in the PLZ 50858 is not statistically significant (p-value = 0.9284), so we don't expect that this is a real outbreak. It is not surprising because we are using dummy metadata which as been arbitrarily assigned to our sequences.
+We see from the results of our statistical test that the association between a sequence belonging to cluster 2 and coming from a diagnostic lab in the PLZ 50858 is not statistically significant (p-value = 0.9284), so we don't expect that this is a real outbreak. It is not surprising because we are using dummy metadata which has been arbitrarily assigned to our sequences.
 
 You could do the same statistical test for all of the different metadata fields to see if there is any association, as well as for all of the clusters, but you will start to run into problems with multiple testing and need to consider [multiple testing correction](https://en.wikipedia.org/wiki/Multiple_comparisons_problem). That is outside of the scope of this course.
